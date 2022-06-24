@@ -14,13 +14,17 @@ const firebaseConfig = {
   const app = initializeApp(firebaseConfig);
 
   const db = getDatabase(app);
-
+  let plot1 = 0;
+  let plot2 = 0;
+  let plot3 = 0;
+  let plot4 = 0;
   document.getElementById('parkAreaChose').addEventListener("change", function() {
   if (this.value == "1") {
+              plot1 = 0;
               const dbRef = ref(getDatabase());
                       get(child(dbRef, 'plot1/')).then((snapshot) => {
                         if (snapshot.exists()) {
-                          var plot1 = snapshot.val();
+                          plot1 = snapshot.val();
                         } else {
                           console.log("No data available");
                         }
@@ -30,19 +34,21 @@ const firebaseConfig = {
 
                       get(child(dbRef, 'plot2/')).then((snapshot) => {
                         if (snapshot.exists()) {
-                          var plot2 = snapshot.val();
+                          plot2 = snapshot.val();
+                            document.getElementById("slotFree").innerHTML = (plot1+plot2).toString();
                         } else {
                           console.log("No data available");
                         }
                       }).catch((error) => {
                         console.error(error);
                       });
-              document.getElementById("slotFree").innerHTML = plot1+plot2;
+
   }else if(this.value == "2"){
     const dbRef = ref(getDatabase());
             get(child(dbRef, 'plot3/')).then((snapshot) => {
               if (snapshot.exists()) {
-                var plot3 = snapshot.val();
+                plot3 = snapshot.val();
+
               } else {
                 console.log("No data available");
               }
@@ -52,15 +58,16 @@ const firebaseConfig = {
 
             get(child(dbRef, 'plot4/')).then((snapshot) => {
               if (snapshot.exists()) {
-                var plot4 = snapshot.val();
+                plot4 = snapshot.val();
+                document.getElementById("slotFree").innerHTML = (plot3+plot4).toString();
               } else {
                 console.log("No data available");
               }
             }).catch((error) => {
               console.error(error);
             });
-            document.getElementById("slotFree").innerHTML = plot3+plot4;
+
   }else{
-     console.log('No Selected');
+     document.getElementById("slotFree").innerHTML = '0';
   }
 });
