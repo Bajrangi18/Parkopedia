@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
+
+/* Modify the background color */
+/* .navbar-custom {
+
+} */
+
+#nav {
+  background-color: #f0f0f0;
+}
+#topBar {
+  background-image: url(back.jpg);
+  height: 110vw;
+}
+#topSmall {
+  font-family: 'Open Sans', sans-serif;
+  font-size: 10vw ;
+  color: white;
+  background: rgba(60, 60, 60, 0.7);
+  width: 85vw;
+  border-radius: 15px;
+  /* position: ; */
+  top: 12vh;
+  left: 10vw;
+  /* padding: 2vh; */
+}
+
+#parkArea {
+  padding: 2vw;
+}
+#regNo {
+  padding: 2vw;
+}
+#phoneNo {
+  padding: 2vw;
+}
+#availSlots {
+  background-color: #f0f0f0;
+  height: 93vw;
+}
+
+#innerSlot {
+  background: rgba(60, 60, 60, 0.4);
+  width: 85vw;
+  border-radius: 15px;
+  height: 80vw;
+  position: inherit;
+  left: 10vw;
+}
+#head {
+  font-family:'Open Sans',sans-serif;
+  text-align:center;
+  font-size:8vw;
+  color:white;
+}
+#slotFree {
+  color: white;
+  align-items: center;
+  font-size: 30vw;
+  position: absolute;
+  left: 40vw;
+}
