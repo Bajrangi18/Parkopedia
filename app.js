@@ -116,7 +116,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
                 console.error(error);
               });
       if(plot3==1) {
-           myFunction1();
+           myFunction3();
       }else{
               get(child(dbRef, 'plot4/')).then((snapshot) => {
                 if (snapshot.exists()) {
@@ -129,7 +129,7 @@ const qrCodeSuccessCallback = (decodedText, decodedResult) => {
                 console.error(error);
               });
               if(plot4==1){
-                myFunction2();
+                myFunction4();
               }else{
                 myFunctionNo();
               }
@@ -195,17 +195,17 @@ function myFunctionNo() {
   setTimeout(function(){ x.className = x.className.replace("show", ""); }, 10000);
 }
 
-document.getElementById('bookBT').addEventListener('click',sendEmail());
-function sendEmail() {
-Email.send({
-    Host : "smtp.mailtrap.io",
-    Username : "2c12f875aec83b",
-    Password : "4223c16385e7a1",
-    To : 'bharatdeep.work@gmail.com',
-    From : "bharatdeep.race@gmail.com",
-    Subject : "Booking Confirmed",
-    Body : "Booking is confirmed, Thank you for choosing Park-o-pedia"
-}).then(
-  message => alert(message)
-);
-}
+// document.getElementById('bookBT').addEventListener('click',sendEmail());
+// function sendEmail() {
+// Email.send({
+//     Host : "smtp.mailtrap.io",
+//     Username : "2c12f875aec83b",
+//     Password : "4223c16385e7a1",
+//     To : 'bharatdeep.work@gmail.com',
+//     From : "bharatdeep.race@gmail.com",
+//     Subject : "Booking Confirmed",
+//     Body : "Booking is confirmed, Thank you for choosing Park-o-pedia"
+// }).then(
+//   message => alert(message)
+// );
+// }
